@@ -1,0 +1,86 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Master.vb" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .menu
+        {
+            background-color: #D5D500;
+        }
+        .displayed1
+        {
+            z-index: 1;
+            right: 1129px;
+            top: 128px;
+            position: absolute;
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header" dir="rtl">
+            <div class="title" 
+                style="font-family: Andalus; font-size: xx-large; color: #FFFFFF; font-weight: 700; height: 129px;">
+                <br />
+                الإتحاد العربي للتدريب&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Logos/AFT.jpeg" 
+                    
+                    style="z-index: 1; right: 5px; top: 4px; position: absolute; height: 114px; width: 112px" 
+                    BorderStyle="Groove" />
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    BackColor="#DDDD00">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="الرئيسية"/>
+                        <asp:MenuItem Text="الخدمات والبرامج" Value="الخدمات والبرامج">
+                            <asp:MenuItem NavigateUrl="~/Programs.aspx" Text="البرامج التدريبية" 
+                                Value="البرامج التدريبية"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="عن الاتحاد">
+                            <asp:MenuItem NavigateUrl="~/ObjVisionstrategies.aspx" Text="الرؤية والرسالةوالأهداف" 
+                                Value="أهداف الإتحاد"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/board.aspx" Text="مجلس الإدارة" 
+                                Value="مجلس الإدارة"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="المعرض" Value="المعرض">
+                            <asp:MenuItem Text="معرض الصور" Value="معرض الصور" NavigateUrl="~/demo.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Vids.aspx" Text="معرض الفيديوهات" 
+                                Value="معرض الفيديوهات"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="اتصل بنا" Value="اتصل بنا"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                
+                
+                <a href="http://www.opic.ae">
+    <img class="displayed1" src="Opic Logo.jpg" alt=""   />
+</a>
+                
+                
+                
+                
+                
+                    </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+        ا<strong>لحقوق 
+        محفوظة لشركة أوبك للتدريب والاستشارات @2020</strong></div>
+    </form>
+</body>
+</html>
